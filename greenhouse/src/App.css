@@ -1,0 +1,99 @@
+/* CSS for the navigation bar */
+.navbar {
+  background-color: white; /* Background color */
+  overflow: hidden;
+}
+
+/* Links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  color: black; /* Text color */
+  text-align: center;
+  padding: 14px 20px; /* Padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Change background color of links on hover */
+.navbar a:hover {
+  background-color: #ddd; /* Hover background color */
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: white; /* Active link background color */
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Profile dropdown container */
+.profile-dropdown {
+  float: right;
+  position: relative;
+}
+
+/* Profile image */
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 8px;
+  margin-right: 15px;
+}
+/* Profile dropdown content */
+.profile-dropdown-content {
+  display: none; /* Initially hide the dropdown menu */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 60px; /* Position dropdown menu below the profile picture */
+  right: 0; /* Align dropdown menu with the right side of the profile picture */
+}
+
+/* Show the dropdown menu when the dropdown-active class is added */
+.dropdown-active .profile-dropdown-content {
+  display: block;
+}
+
+
+
+/* Style the dropdown links */
+.profile-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.profile-dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Arrow icon */
+.arrow-down {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%) rotate(45deg); /* Initial rotation */
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  cursor: pointer; /* Add cursor pointer */
+}
+/* status image css */
+.statusContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px; /* Set the height of the container */
+}
+
+.greenhouse-image {
+  width: 75%; /* Set the width of the image */
+  height: 100%; /* Maintain aspect ratio */
+}
