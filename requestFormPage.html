@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Request Form</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <a class="active" href="#">UC Merced Greenhouse</a>
-        <a href="#">Status</a>
-        <div class="adminlogbutton">
-            <a href="adminLogin.html">Admin Login</a>
+      <a class="active" href="#">UC Merced Greenhouse</a>
+      <div class="Status Button"><a href="#">Status</a></div>
+      <div class="profile-dropdown">
+            <img src="profile_picture.jpg" alt="Profile" class="profile-image">
+            <div class="profile-dropdown-content">
+                <a href="#">Log out</a>
+            </div>
+            <div class="arrow-down" onclick="toggleDropdown()"></div>
         </div>
     </nav>
-
+    <div class="Current Requests Tale">
+<table>
+<tr>
+    <td>Requests</td>
+</tr>
+<tr>
+    <td>Name</td>
+    <td>authorization</td>
+</tr>
+<tr>
+    <td>Ted</td>
+    <td>approve </td>
+    <td>decline</td>
+</tr>
+<tr>
+    <td>Glen</td>
+    <td>approve</td>
+    <td>decline</td>
+</tr>
+</table>
+    </div>
+        
+    </table>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
