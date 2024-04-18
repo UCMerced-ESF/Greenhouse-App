@@ -84,3 +84,13 @@
   padding: 3px;
   cursor: pointer; /* Add cursor pointer */
 }
+
+table {
+  width: 100%;
+
+  tr:hover {
+    background-color: #ddd;
+  }
+
+  border-collapse: collapse;
+}
