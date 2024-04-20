@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UCM Greenhouse</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Links to an external stylesheet for all CSS styles -->
 </head>
 <body>
+    <!-- Navigation bar setup for site navigation -->
     <nav class="navbar">
+        <!-- Currently active page indicator -->
         <a class="active" href="#">UC Merced Greenhouse</a>
+        <!-- Link to handle requests -->
         <a href="#">Requests</a>
+        
+        <!-- Profile dropdown for user interaction -->
         <div class="profile-dropdown">
-            <img src="profile_picture.jpg" alt="Profile" class="profile-image">
+            <img src="profile_picture.jpg" alt="Profile" class="profile-image"> <!-- Profile image for user recognition -->
             <div class="profile-dropdown-content">
-                <a href="#">Log out</a>
+                <a href="#">Log out</a> <!-- Logout link -->
             </div>
-            <div class="arrow-down" onclick="toggleDropdown()"></div>
+            <div class="arrow-down" onclick="toggleDropdown()"></div> <!-- Interactive arrow for dropdown -->
         </div>
     </nav>
 
+    <!-- Status container for main content display, such as images -->
     <div class="statusContainer">
-        <img src="greenhouse.jpg" alt="Greenhouse" class="greenhouse-image">
+        <img src="greenhouse.jpg" alt="Greenhouse" class="greenhouse-image"> <!-- Main image showcasing the greenhouse -->
     </div>
-    <script src="script.js"></script>
+
+    <script src="script.js"></script> <!-- External JavaScript file for dynamic functionalities -->
 </body>
 </html>
