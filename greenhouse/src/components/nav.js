@@ -1,14 +1,16 @@
 import React from 'react';
 
-const Nav = () => {
+const Nav = ({ onNavigationClick }) => {
     return (
-        <nav style={navbarStyle}>
-            <a style={activeLinkStyle} href="#">UC Merced Greenhouse</a>
-            <a style={linkStyle} href="#">Request Space!</a>
-            <div style={adminButtonStyle}>
-                <a style={linkStyle}>Admin Login</a>
-            </div>
-        </nav>
+           
+
+             <nav style={navbarStyle}>
+                    <a style={activeLinkStyle} href="#">UC Merced Greenhouse</a>
+
+                    <a  style={linkStyle} onClick={() => onNavigationClick('status')} href="#">Status</a>
+                    <a style={linkStyle} onClick={() => onNavigationClick('requestForm')} href="#">Request Form</a>
+            </nav>
+    
     );
 }
 
