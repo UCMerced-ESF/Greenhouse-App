@@ -1,49 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Request Form</title>
-    <link rel="stylesheet" href="requestFormStyle.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <a class="active" href="#">UC Merced Greenhouse</a>
-      <div class="Status Button"><a href="#">Status</a></div>
-      <div class="profile-dropdown">
-            <img src="profile_picture.jpg" alt="Profile" class="profile-image">
-            <div class="profile-dropdown-content">
-                <a href="#">Log out</a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Request Form</title>
+        <link rel="stylesheet" href="requestFormStyle.css" />
+    </head>
+    <body>
+        <nav class="navbar">
+            <a class="active" href="#">UC Merced Greenhouse</a>
+            <div class="Status Button"><a href="#">Status</a></div>
+            <div class="profile-dropdown">
+                <img
+                    src="profile_picture.jpg"
+                    alt="Profile"
+                    class="profile-image"
+                />
+                <div class="profile-dropdown-content">
+                    <a href="#">Log out</a>
+                </div>
+                <div class="arrow-down" onclick="toggleDropdown()"></div>
             </div>
-            <div class="arrow-down" onclick="toggleDropdown()"></div>
+        </nav>
+        <div class="Requests-table">
+            <h1>Requests</h1>
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td></td>
+                    <td></td>
+                    <td>authorization</td>
+                </tr>
+                <tr>
+                    <td>Ted</td>
+                    <td></td>
+                    <td></td>
+                    <td>approve / decline</td>
+                </tr>
+                <tr>
+                    <td>Glen</td>
+                    <td></td>
+                    <td></td>
+                    <td>approve / decline</td>
+                </tr>
+            </table>
         </div>
-    </nav>
-    <div class="Requests-table">
-        <h1>Requests</h1>
-<table>
-
-<tr>
-    <td>Name</td>
-    <td></td>
-    <td></td>
-    <td>authorization</td>
-</tr>
-<tr>
-    <td>Ted</td>
-    <td></td>
-    <td></td>
-    <td>approve / decline</td>
-</tr>
-<tr>
-    <td>Glen</td>
-    <td></td>
-    <td></td>
-    <td>approve / decline</td>
-</tr>
-</table>
-    </div>
-        
-    </table>
-    <script src="script.js"></script>
-  </body>
+        <script src="script.js"></script>
+    </body>
 </html>
