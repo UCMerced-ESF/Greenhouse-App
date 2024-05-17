@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCM Greenhouse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Sets the font style for the page */
+            margin: 0; /* Removes default margin around the body */
+            padding: 0; /* Removes default padding */
+            background-color: #f4f4f4; /* Sets a light grey background color */
+        }
+        .navbar {
+            background-color: #004d40; /* Dark teal background for the navbar */
+            color: white; /* Text color for the navbar */
+            padding: 10px 20px; /* Padding inside the navbar */
+            text-align: left; /* Aligns text to the left within the navbar */
+        }
+        .navbar a {
+            color: white; /* Sets link color in the navbar */
+            text-decoration: none; /* Removes underline from links */
+            padding: 10px 20px; /* Adds padding around the links */
+            font-size: 16px; /* Sets the font size for links */
+            display: inline-block; /* Allows links to sit next to each other */
+        }
+        .navbar a.active {
+            background-color: #00796b; /* Highlights the active link with a slightly lighter teal */
+            border-radius: 5px; /* Rounds the corners of the active link */
+        }
+        .profile-dropdown {
+            float: right; /* Positions the dropdown on the right */
+            position: relative; /* Enables absolute positioning for children */
+        }
+        .profile-dropdown img {
+            width: 40px; /* Sets the width of the profile image */
+            height: 40px; /* Sets the height of the profile image */
+            border-radius: 50%; /* Makes the profile image circular */
+        }
+        .profile-dropdown-content {
+            display: none; /* Hides the dropdown content by default */
+            position: absolute; /* Positions the dropdown relative to the parent */
+            background-color: #f9f9f9; /* Light background for dropdown items */
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Adds shadow to the dropdown */
+            padding: 12px 16px; /* Padding inside the dropdown */
+            z-index: 1; /* Ensures the dropdown appears on top of other content */
+        }
+        .profile-dropdown:hover .profile-dropdown-content {
+            display: block; /* Shows the dropdown content on hover */
+        }
+        .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #fff; /* Creates a downward pointing arrow using borders */
+            position: absolute; /* Absolute positioning within the dropdown */
+            right: 10px;
+            top: 10px;
+            cursor: pointer; /* Changes cursor to indicate clickable */
+        }
+        .statusContainer {
+            padding: 20px; /* Adds padding around the status container */
+            text-align: center; /* Centers content horizontally */
+        }
+        .statusContainer img {
+            width: 100%; /* Makes the image responsive */
+            max-width: 600px; /* Limits the maximum width */
+            height: auto; /* Maintains aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="active" href="#">UC Merced Greenhouse</a> <!-- Active navigation link -->
+        <a href="#">Requests</a> <!-- Another navigation link -->
+        <div class="profile-dropdown">
+            <img src="https://via.placeholder.com/40" alt="Profile" class="profile-image"> <!-- Profile image -->
+            <div class="profile-dropdown-content">
+                <a href="#">Log out</a> <!-- Dropdown link -->
+            </div>
+            <div class="arrow-down" onclick="toggleDropdown()"></div> <!-- Dropdown arrow, clickable -->
+        </div>
+    </nav>
+
+    <div class="statusContainer">
+        <img src="https://via.placeholder.com/600x400?text=Greenhouse" alt="Greenhouse" class="greenhouse-image"> <!-- Image of a greenhouse -->
+    </div>
+    <script>
+        function toggleDropdown() {
+            var content = document.querySelector('.profile-dropdown-content');
+            content.style.display = content.style.display === 'block' ? 'none' : 'block'; /* Toggles visibility of dropdown */
+        }
+    </script>
+</body>
+</html>
