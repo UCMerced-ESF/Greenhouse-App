@@ -5,7 +5,7 @@ const Nav = ({ onNavigationClick }) => {
            
 
              <nav style={navbarStyle}>
-                    <a style={activeLinkStyle} href="#">UC Merced Greenhouse</a>
+                    <a style={activeLinkStyle} href="#"np>UC Merced Greenhouse</a>
 
                     <a  style={linkStyle} onClick={() => onNavigationClick('status')} href="#">Status</a>
                     <a style={linkStyle} onClick={() => onNavigationClick('requestForm')} href="#">Request Form</a>
