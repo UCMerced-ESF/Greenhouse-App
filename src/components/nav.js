@@ -4,11 +4,11 @@ const Nav = ({ onNavigationClick }) => {
     return (
            
 
-             <nav style={navbarStyle}>
-                    <a style={activeLinkStyle} href="#"np>UC Merced Greenhouse</a>
+             <nav id="top" style={navbarStyle}>
+                    <a style={activeLinkStyle} href="#top">UC Merced Greenhouse</a>
 
-                    <a  style={linkStyle} onClick={() => onNavigationClick('status')} href="#">Status</a>
-                    <a style={linkStyle} onClick={() => onNavigationClick('requestForm')} href="#">Request Form</a>
+                    <a  style={linkStyle} onClick={() => onNavigationClick('status')} href="#top">Status</a>
+                    <a style={linkStyle} onClick={() => onNavigationClick('requestForm')} href="#top">Request Form</a>
             </nav>
     
     );
@@ -41,8 +41,6 @@ const linkStyle = {
     textDecoration: 'none',
 };
 
-const adminButtonStyle = {
-    float: 'left',
-};
+
 
 export default Nav;
