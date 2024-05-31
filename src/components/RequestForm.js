@@ -14,7 +14,7 @@ const RequestForm = () => {
     //     const { name, value } = e.target;
     //     setFormData({ ...formData, [name]: value });
     // };
-const apiUrl = 'https://ucmerced.terrantic.net/form/list/Green%20House%20Space%20Request';
+    const apiUrl = 'https://ucmerced.terrantic.net/f/Green%20House%20Space%20Request';
 
     // // Handle form submission
     // const handleSubmit = (e) => {
