@@ -33,7 +33,7 @@ const RequestForm = () => {
         <div>
             <h2>Request Form</h2>
             <iframe
-            title="Embedded API"
+            title="Request Form"
             width="100%"
             height="500px"
             src={apiUrl}
