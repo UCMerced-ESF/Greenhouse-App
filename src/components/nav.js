@@ -39,7 +39,7 @@ const linksContainerStyle = {
 
 const linkStyle = {
     color: 'white',  // Change color to white for better visibility
-    padding: '15px 20px',
+    padding: '30px',
     textDecoration: 'none',
     fontSize: '18px',  // Example font size
 };
