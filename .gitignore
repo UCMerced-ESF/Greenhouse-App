@@ -1,2 +1,4 @@
+#first line
 build/
 node_modules
+.vscode/

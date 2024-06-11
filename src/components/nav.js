@@ -11,6 +11,7 @@ const Nav = ({ onNavigationClick }) => {
             </a>
                 <a style={linkStyle} onClick={() => onNavigationClick('status')} href="#top">Status</a>
                 <a style={linkStyle} onClick={() => onNavigationClick('requestForm')} href="#top">Request </a>
+                <a style={linkStyle} onClick={() => onNavigationClick('apiTest')} href="#top">ApiTest</a>
             </div>
         </nav>
     );
