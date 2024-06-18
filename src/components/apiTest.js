@@ -1,38 +1,50 @@
 import React, { useState, useEffect } from "react";
 
-const ApiTest = () => {
+const GreenHouseSpaceRequest = () => {
   const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const url = "/api/ping";
-    const options = { method: "GET", headers: { Accept: "application/json" } };
+    const fetchData = async () => {
+      const url =
+        "/api/datasets/table/query/select?query=select+*+from+postgresql%28pg_data%2C+table%3D%22tabGreen+House+Space+Request%22%2C+schema%3D%22forms%22%29";
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer 123",
+        },
+        body: undefined,
+      };
 
-    fetch(url, options)
-      .then((response) => response.text())
-      .then((htmlString) => {
-        // Parse the HTML string into a document object
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(htmlString, "text/html");
-        // Extract the body content
-        const bodyContent = doc.body.innerHTML;
-        setData(bodyContent);
-      })
-      .catch((error) => console.error(error));
+      try {
+        const response = await fetch(url, options);
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          const jsonData = await response.json();
+          setData(jsonData);
+        } else {
+          const text = await response.text();
+          console.error("Expected JSON, got:", text);
+          setError(new Error("Received non-JSON response"));
+        }
+      } catch (fetchError) {
+        setError(fetchError);
+      }
+    };
+    fetchData();
   }, []);
 
   return (
     <div>
-      {data && (
-        <div
-          style={{
-            transform: "scale(1.5)",
-            transformOrigin: "0 0",
-          }}
-          dangerouslySetInnerHTML={{ __html: data }}
-        />
+      {error ? (
+        <p style={{ color: "red" }}>{error.message}</p>
+      ) : (
+        <pre>{data ? JSON.stringify(data, null, 2) : "Loading..."}</pre>
       )}
     </div>
   );
 };
 
-export default ApiTest;
+export default GreenHouseSpaceRequest;

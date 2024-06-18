@@ -3,7 +3,7 @@ import Nav from "./components/nav";
 import Status from "./components/Status";
 // import ProfileDropdown from './components/profileDropdown';
 import RequestForm from "./components/RequestForm";
-import ApiTest from "./components/apiTest";
+import GreenHouseSpaceRequest from "./components/apiTest";
 
 const App = () => {
   //handles dom
@@ -21,7 +21,9 @@ const App = () => {
 
       {currentComponent === "status" && <Status />}
       {currentComponent === "requestForm" && <RequestForm />}
-      {currentComponent === "apiTest" && <ApiTest />}
+      {currentComponent === "greenHouseSpaceRequest" && (
+        <GreenHouseSpaceRequest />
+      )}
     </div>
   );
 };
