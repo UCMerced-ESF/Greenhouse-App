@@ -15,8 +15,8 @@ const ApiAuth = () => {
         },
         body: new URLSearchParams({
           grant_type: '',
-          username: 'smanjrekar2@ucmerced.edu',
-          password: 'ucm5730*',
+          username: '',
+          password: '',
           scope: '',
           client_id: '',
           client_secret: ''
