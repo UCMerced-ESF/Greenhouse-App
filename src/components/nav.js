@@ -29,6 +29,13 @@ const Nav = ({ onNavigationClick }) => {
         >
           ApiTest
         </a>
+        <a
+          style={linkStyle}
+          onClick={() => onNavigationClick("apiAuth")}
+          href="#top"
+        >
+          ApiAuth
+        </a>
       </div>
     </nav>
   );
