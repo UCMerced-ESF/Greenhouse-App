@@ -24,17 +24,10 @@ const Nav = ({ onNavigationClick }) => {
         </a>
         <a
           style={linkStyle}
-          onClick={() => onNavigationClick("greenHouseSpaceRequest")}
+          onClick={() => onNavigationClick("farmFormData")}
           href="#top"
         >
-          ApiTest
-        </a>
-        <a
-          style={linkStyle}
-          onClick={() => onNavigationClick("apiAuth")}
-          href="#top"
-        >
-          ApiAuth
+          Request Form Data
         </a>
       </div>
     </nav>

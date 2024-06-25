@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 
-const GreenHouseSpaceRequest = () => {
+const FarmFormData = () => {
   const [formData, setFormData] = useState(null);
   const [error, setError] = useState(null);
   const [authToken, setauthToken] = useState(null);
@@ -28,8 +28,8 @@ const GreenHouseSpaceRequest = () => {
       try {
         const response = await fetch(url, options);
         const data = await response.json();
-        console.log(data);
         setauthToken(data);
+        console.log(data);
       } catch (error) {
       }
     };
@@ -57,7 +57,7 @@ const GreenHouseSpaceRequest = () => {
         if (contentType && contentType.includes("application/json")) {
           const jsonData = await response.json();
           setFormData(jsonData);
-          console.log(formData);
+          console.log(jsonData);
         } else {
           const text = await response.text();
           console.error("Expected JSON, got:", text);
@@ -68,7 +68,7 @@ const GreenHouseSpaceRequest = () => {
       }
     };
     fetchFormData();
-  }, []);
+  }, [authToken]);
 
   return (
     <div>
@@ -81,4 +81,4 @@ const GreenHouseSpaceRequest = () => {
   );
 };
 
-export default GreenHouseSpaceRequest;
+export default FarmFormData;
