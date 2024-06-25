@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 const GreenHouseSpaceRequest = () => {
-  const [data, setData] = useState(null);
+  const [formData, setFormData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchFormData = async () => {
       const url =
         "/api/datasets/table/query/select?query=select+*+from+postgresql%28pg_data%2C+table%3D%22tabGreen+House+Space+Request%22%2C+schema%3D%22forms%22%29";
       const options = {
@@ -23,7 +23,7 @@ const GreenHouseSpaceRequest = () => {
         const contentType = response.headers.get("content-type");
         if (contentType && contentType.includes("application/json")) {
           const jsonData = await response.json();
-          setData(jsonData);
+          setFormData(jsonData);
         } else {
           const text = await response.text();
           console.error("Expected JSON, got:", text);
@@ -33,7 +33,7 @@ const GreenHouseSpaceRequest = () => {
         setError(fetchError);
       }
     };
-    fetchData();
+    fetchFormData();
   }, []);
 
   return (
@@ -41,7 +41,7 @@ const GreenHouseSpaceRequest = () => {
       {error ? (
         <p style={{ color: "red" }}>{error.message}</p>
       ) : (
-        <pre>{data ? JSON.stringify(data, null, 2) : "Loading..."}</pre>
+        <pre>{formData ? JSON.stringify(formData, null, 2) : "Loading..."}</pre>
       )}
     </div>
   );

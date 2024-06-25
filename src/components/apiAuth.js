@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 const ApiAuth = () => {
-  const [authData, setAuthData] = useState(null);
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [authToken, setauthToken] = useState(null);
 
   useEffect(() => {
-    const fetchData = async (e) => {
+    const fetchToken = async () => {
       const url = '/api/auth/jwt/login';
       const options = {
         method: 'POST',
@@ -16,8 +14,8 @@ const ApiAuth = () => {
         },
         body: new URLSearchParams({
           grant_type: '',
-          username: username,
-          password: password,
+          username: '',
+          password: '',
           scope: '',
           client_id: '',
           client_secret: ''
@@ -28,20 +26,18 @@ const ApiAuth = () => {
         const response = await fetch(url, options);
         const data = await response.json();
         console.log(data);
-        setAuthData(data);
-        console.log(authData);
+        setauthToken(data);
+        console.log(authToken);
       } catch (error) {
       }
     };
-    fetchData();
+    fetchToken();
   }, []);
 
   return (
-      <form>
-        <input action="setPassword"></input>
-        <input action="setUsername"></input>
-        <button type="submit"></button>
-      </form>
+    <div>
+  <p1>test</p1>
+    </div>
   );
 };
 
