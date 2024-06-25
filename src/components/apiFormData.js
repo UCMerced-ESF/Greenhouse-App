@@ -1,8 +1,41 @@
 import React, { useState, useEffect } from "react";
 
+
 const GreenHouseSpaceRequest = () => {
   const [formData, setFormData] = useState(null);
   const [error, setError] = useState(null);
+  const [authToken, setauthToken] = useState(null);
+
+  useEffect(() => {
+    const fetchToken = async () => {
+      const url = '/api/auth/jwt/login';
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          Accept: 'application/json'
+        },
+        body: new URLSearchParams({
+          grant_type: '',
+          username: '',
+          password: '',
+          scope: '',
+          client_id: '',
+          client_secret: ''
+        })
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+        console.log(data);
+        setauthToken(data);
+      } catch (error) {
+      }
+    };
+
+    fetchToken();
+  }, []);
 
   useEffect(() => {
     const fetchFormData = async () => {
@@ -13,7 +46,7 @@ const GreenHouseSpaceRequest = () => {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          Authorization: "",
+          Authorization: authToken,
         },
         body: undefined,
       };
@@ -24,6 +57,7 @@ const GreenHouseSpaceRequest = () => {
         if (contentType && contentType.includes("application/json")) {
           const jsonData = await response.json();
           setFormData(jsonData);
+          console.log(formData);
         } else {
           const text = await response.text();
           console.error("Expected JSON, got:", text);
