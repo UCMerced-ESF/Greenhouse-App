@@ -17,8 +17,8 @@ const FarmFormData = () => {
         },
         body: new URLSearchParams({
           grant_type: '',
-          username: '',
-          password: '',
+          username: process.env.USERNAME,
+          password: process.env.PASSWORD,
           scope: '',
           client_id: '',
           client_secret: ''
