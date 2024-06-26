@@ -3,7 +3,7 @@ import Nav from "./components/nav";
 import Status from "./components/Status";
 // import ProfileDropdown from './components/profileDropdown';
 import RequestForm from "./components/RequestForm";
-import FarmFormData from "./components/ApiFormData";
+import FarmFormData from "./components/apiFormData";
 
 const App = () => {
   //handles dom
