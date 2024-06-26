@@ -1,11 +1,44 @@
 import React, { useState, useEffect } from "react";
 
-const GreenHouseSpaceRequest = () => {
-  const [data, setData] = useState(null);
+
+const FarmFormData = () => {
+  const [formData, setFormData] = useState(null);
   const [error, setError] = useState(null);
+  const [authToken, setauthToken] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchToken = async () => {
+      const url = '/api/auth/jwt/login';
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          Accept: 'application/json'
+        },
+        body: new URLSearchParams({
+          grant_type: '',
+          username: '',
+          password: '',
+          scope: '',
+          client_id: '',
+          client_secret: ''
+        })
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+        setauthToken(data);
+        console.log(data);
+      } catch (error) {
+      }
+    };
+
+    fetchToken();
+  }, []);
+
+  useEffect(() => {
+    const fetchFormData = async () => {
       const url =
         "/api/datasets/table/query/select?query=select+*+from+postgresql%28pg_data%2C+table%3D%22tabGreen+House+Space+Request%22%2C+schema%3D%22forms%22%29";
       const options = {
@@ -13,7 +46,7 @@ const GreenHouseSpaceRequest = () => {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          Authorization: "",
+          Authorization: authToken,
         },
         body: undefined,
       };
@@ -23,7 +56,8 @@ const GreenHouseSpaceRequest = () => {
         const contentType = response.headers.get("content-type");
         if (contentType && contentType.includes("application/json")) {
           const jsonData = await response.json();
-          setData(jsonData);
+          setFormData(jsonData);
+          console.log(jsonData);
         } else {
           const text = await response.text();
           console.error("Expected JSON, got:", text);
@@ -33,18 +67,18 @@ const GreenHouseSpaceRequest = () => {
         setError(fetchError);
       }
     };
-    fetchData();
-  }, []);
+    fetchFormData();
+  }, [authToken]);
 
   return (
     <div>
       {error ? (
         <p style={{ color: "red" }}>{error.message}</p>
       ) : (
-        <pre>{data ? JSON.stringify(data, null, 2) : "Loading..."}</pre>
+        <pre>{formData ? JSON.stringify(formData, null, 2) : "Loading..."}</pre>
       )}
     </div>
   );
 };
 
-export default GreenHouseSpaceRequest;
+export default FarmFormData;
