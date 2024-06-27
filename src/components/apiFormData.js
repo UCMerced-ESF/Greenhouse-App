@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect} from "react";
+// import LoginForm from "./loginForm";
 
 const FarmFormData = () => {
   const [formData, setFormData] = useState(null);
   const [error, setError] = useState(null);
   const [authToken, setauthToken] = useState(null);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
 
   useEffect(() => {
     const fetchToken = async () => {
@@ -17,8 +20,8 @@ const FarmFormData = () => {
         },
         body: new URLSearchParams({
           grant_type: '',
-          username: '',
-          password: '',
+          username: username,
+          password: password,
           scope: '',
           client_id: '',
           client_secret: ''
@@ -33,7 +36,6 @@ const FarmFormData = () => {
       } catch (error) {
       }
     };
-
     fetchToken();
   }, []);
 
@@ -72,6 +74,31 @@ const FarmFormData = () => {
 
   return (
     <div>
+      <div>
+        <form>
+          <label>
+            user name:
+            <input
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+            />
+          </label>
+          <label>
+            password:
+            <input
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+            />
+          </label>
+          <button type="submit" onSubmit="fetchToken"> submit</button>
+          {username !== '' &&
+            <p>Your name is {username}.</p>
+          }
+          {password !== '' &&
+            <p>Your name is {password}.</p>
+          }
+        </form>
+      </div>
       {error ? (
         <p style={{ color: "red" }}>{error.message}</p>
       ) : (
