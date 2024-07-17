@@ -8,7 +8,6 @@ const FarmFormData = () => {
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-
   const fetchToken = async (e) => {
     e.preventDefault();
     setError(null);
@@ -28,26 +27,6 @@ const FarmFormData = () => {
         client_secret: ''
       })
     };
-    
-  useEffect(() => {
-    const fetchToken = async () => {
-      const url = '/api/auth/jwt/login';
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          Accept: 'application/json'
-        },
-        body: new URLSearchParams({
-          grant_type: '',
-          username: process.env.USERNAME,
-          password: process.env.PASSWORD,
-          scope: '',
-          client_id: '',
-          client_secret: ''
-        })
-      };
-
 
     try {
       const response = await fetch(url, options);
@@ -55,7 +34,7 @@ const FarmFormData = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.text();
-      setAuthToken(data); 
+      setAuthToken(data);
       setIsAuthenticated(true);
       console.log("Auth successful:", data);
     } catch (error) {
@@ -83,7 +62,7 @@ const FarmFormData = () => {
       if (!response.ok) {
         throw new Error(response.status);
       }
-      const jsonData = await response.json(); 
+      const jsonData = await response.json();
       setFormData(jsonData);
       console.log("Form data fetched:", jsonData);
     } catch (fetchError) {
