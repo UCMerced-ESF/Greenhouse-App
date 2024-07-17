@@ -11,7 +11,7 @@ const FarmFormData = () => {
   const fetchToken = async (e) => {
     e.preventDefault();
     setError(null);
-    const url = 'api/auth/jwt/login';
+    const url = '/api/auth/jwt/login';
     const options = {
       method: 'POST',
       headers: {
@@ -46,7 +46,7 @@ const FarmFormData = () => {
   const fetchFormData = useCallback(async () => {
     if (!authToken) return;
     setError(null);
-    const url = "api/datasets/table/query/select?query=select+*+from+postgresql%28pg_data%2C+table%3D%22tabGreen+House+Space+Request%22%2C+schema%3D%22forms%22%29";
+    const url = "/api/datasets/table/query/select?query=select+*+from+postgresql%28pg_data%2C+table%3D%22tabGreen+House+Space+Request%22%2C+schema%3D%22forms%22%29";
     const options = {
       method: "POST",
       headers: {
