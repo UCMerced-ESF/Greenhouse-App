@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 
+// const API_URL = process.env.REACT_APP_API_URL || 'https://ucmerced.terrantic.net/api';
+
 const FarmFormData = () => {
   const [formData, setFormData] = useState(null);
   const [error, setError] = useState(null);
@@ -11,7 +13,7 @@ const FarmFormData = () => {
   const fetchToken = async (e) => {
     e.preventDefault();
     setError(null);
-    const url = '/api/auth/jwt/login';
+    const url = 'https://ucmerced.terrantic.net/api/auth/jwt/login';
     const options = {
       method: 'POST',
       headers: {
