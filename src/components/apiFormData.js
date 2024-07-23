@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-// const API_URL = process.env.REACT_APP_API_URL || 'https://ucmerced.terrantic.net/api';
-
 const FarmFormData = () => {
   const [formData, setFormData] = useState(null);
   const [error, setError] = useState(null);
@@ -48,7 +46,7 @@ const FarmFormData = () => {
   const fetchFormData = useCallback(async () => {
     if (!authToken) return;
     setError(null);
-    const url = "/api/datasets/table/query/select?query=select+*+from+postgresql%28pg_data%2C+table%3D%22tabGreen+House+Space+Request%22%2C+schema%3D%22forms%22%29";
+    const url = 'https://ucmerced.terrantic.net/api/datasets/table/query/select?query=select+*+from+postgresql%28pg_data%2C+table%3D%22tabGreen+House+Space+Request%22%2C+schema%3D%22forms%22%29';
     const options = {
       method: "POST",
       headers: {
