@@ -54,7 +54,7 @@ const FarmFormData = () => {
         Accept: "application/json",
         Authorization: authToken,
       },
-      body: undefined,
+      body: JSON.stringify({}), // Adjust this line if body should not be undefined
     };
 
     try {
