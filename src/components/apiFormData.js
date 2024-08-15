@@ -8,6 +8,8 @@ const FarmFormData = () => {
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  const apiUrl = 'https://ucmerced.terrantic.net/f/Green%20House%20Space%20Request';
+
   const fetchToken = async (e) => {
     e.preventDefault();
     setError(null);
@@ -119,13 +121,23 @@ const FarmFormData = () => {
 
   return (
     <div>
-      <h2>Form Data</h2>
+      {/* <h2>Form Data</h2>
       {error && <p style={{ color: "red" }}>{error.message}</p>}
       {formData ? (
         <pre>{JSON.stringify(formData, null, 2)}</pre>
       ) : (
         <p>Loading form data...</p>
-      )}
+      )} */}
+      
+      {/* iframe filler */}
+      <h2>Requests</h2>
+
+      <iframe
+                title="Requests"
+                width="100%"
+                height="500px"
+                src={apiUrl}
+            ></iframe>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );

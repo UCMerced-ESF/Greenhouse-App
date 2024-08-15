@@ -27,7 +27,7 @@ const Nav = ({ onNavigationClick }) => {
           onClick={() => onNavigationClick("farmFormData")}
           href="#top"
         >
-          Request Form Data
+          Admin
         </a>
       </div>
     </nav>
