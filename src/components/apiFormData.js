@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 
 const FarmFormData = () => {
-  const [formData, setFormData] = useState(null);
+  // const [formData, setFormData] = useState(null);
   const [error, setError] = useState(null);
   const [authToken, setAuthToken] = useState(null);
   const [username, setUsername] = useState('');
@@ -65,7 +65,7 @@ const FarmFormData = () => {
         throw new Error(response.status);
       }
       const jsonData = await response.json();
-      setFormData(jsonData);
+      // setFormData(jsonData);
       console.log("Form data fetched:", jsonData);
     } catch (fetchError) {
       setError(fetchError);
@@ -82,7 +82,7 @@ const FarmFormData = () => {
   const handleLogout = () => {
     setAuthToken(null);
     setIsAuthenticated(false);
-    setFormData(null);
+    // setFormData(null);
     setUsername('');
     setPassword('');
   };
