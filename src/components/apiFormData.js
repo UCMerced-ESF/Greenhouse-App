@@ -13,7 +13,7 @@ const FarmFormData = () => {
   const fetchToken = async (e) => {
     e.preventDefault();
     setError(null);
-    const url = '/auth/jwt/login';
+    const url = 'https://ucmerced.terrantic.net/api/auth/jwt/login';
     const options = {
       method: 'POST',
       headers: {
