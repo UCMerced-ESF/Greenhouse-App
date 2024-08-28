@@ -128,7 +128,6 @@ const FarmFormData = () => {
       ) : (
         <p>Loading form data...</p>
       )} */}
-      
       {/* iframe filler */}
       <h2>Requests</h2>
 
