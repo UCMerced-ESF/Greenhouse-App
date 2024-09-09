@@ -89,56 +89,55 @@ const FarmFormData = () => {
 
   if (!isAuthenticated) {
     return (
-      <div>
-        <h2>Login</h2>
-        <form onSubmit={fetchToken}>
-          <div>
-            <label htmlFor="username">Username:</label>
-            <input
-              id="username"
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password:</label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit">Login</button>
-        </form>
-        {error && <p style={{ color: "red" }}>{error.message}</p>}
+      <div style={{ fontFamily: 'Arial, sans-serif', maxWidth: '400px', margin: '0 auto', padding: '20px', border: '1px solid #ddd', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+    <h2 style={{ textAlign: 'center', color: '#333' }}>Login</h2>
+    <form onSubmit={fetchToken}>
+      <div style={{ marginBottom: '15px' }}>
+        <label htmlFor="username" style={{ display: 'block', marginBottom: '5px', fontSize: '14px', color: '#555' }}>Username:</label>
+        <input
+          id="username"
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+          style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc', fontSize: '14px' }}
+        />
       </div>
+      <div style={{ marginBottom: '15px' }}>
+        <label htmlFor="password" style={{ display: 'block', marginBottom: '5px', fontSize: '14px', color: '#555' }}>Password:</label>
+        <input
+          id="password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc', fontSize: '14px' }}
+        />
+      </div>
+      <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#003262', color: '#fff', border: 'none', borderRadius: '5px', fontSize: '16px', cursor: 'pointer' }}>Login</button>
+    </form>
+    {error && <p style={{ color: 'red', textAlign: 'center', marginTop: '10px' }}>{error.message}</p>}
+  </div>
     );
   }
 
   return (
-    <div>
-      {/* <h2>Form Data</h2>
-      {error && <p style={{ color: "red" }}>{error.message}</p>}
-      {formData ? (
-        <pre>{JSON.stringify(formData, null, 2)}</pre>
-      ) : (
-        <p>Loading form data...</p>
-      )} */}
-      {/* iframe filler */}
-      <h2>Requests</h2>
-
-      <iframe
-                title="Requests"
-                width="100%"
-                height="500px"
-                src={apiUrl}
-            ></iframe>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
+    <div style={{ fontFamily: 'Arial, sans-serif', maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
+    <h2 style={{ textAlign: 'center', color: '#333' }}>Requests</h2>
+    <iframe
+      title="Requests"
+      width="100%"
+      height="500px"
+      src={apiUrl}
+      style={{ border: '1px solid #ddd', borderRadius: '5px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}
+    ></iframe>
+    <button 
+      onClick={handleLogout} 
+      style={{ display: 'block', width: '100%', marginTop: '20px', padding: '10px', backgroundColor: '#003262', color: '#fff', border: 'none', borderRadius: '5px', fontSize: '16px', cursor: 'pointer' }}
+    >
+      Logout
+    </button>
+  </div>
   );
 };
 
